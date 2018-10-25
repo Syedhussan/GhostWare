@@ -58,4 +58,4 @@ if arguments.linux:
 print("Backdoor Created Successfully")
 
 print("\n\n[***] Please use this tool for Legal and Valid Purposes\n")
-print("\t\t [***] Adios Muchahos!!!")
+print("\t\t [***] Adios Muchachos!!!")
